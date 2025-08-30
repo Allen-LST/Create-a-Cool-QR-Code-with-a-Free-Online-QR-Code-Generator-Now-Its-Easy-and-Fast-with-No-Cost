@@ -1,0 +1,45 @@
+// Language translations
+const translations = {
+  id: {
+    'QR Code Generator': 'QR Code Generator',
+    'Create QR Code from URL or text easily': 'Buat QR Code dari URL atau teks dengan mudah',
+    'URL or Text': 'URL atau Teks',
+    'Enter URL or text': 'Masukkan URL atau teks',
+    'QR Code Size': 'Ukuran QR Code',
+    'Color': 'Warna',
+    'Generate QR Code': 'Generate QR Code',
+    'Download QR Code': 'Download QR Code',
+    'How to use:': 'Cara menggunakan:',
+    'Enter URL or text in the input field': 'Masukkan URL atau teks di kolom input',
+    'Adjust size and color as desired (optional)': 'Atur ukuran dan warna sesuai keinginan (opsional)',
+    'Click Generate QR Code button': 'Klik tombol "Generate QR Code"',
+    'QR Code will appear on screen': 'QR Code akan muncul di layar',
+    'Click Download QR Code to save image': 'Klik "Download QR Code" untuk menyimpan gambar',
+    'Scan QR Code with Google Lens or other QR scanner apps': 'Scan QR Code dengan Google Lens atau aplikasi scanner QR lainnya',
+    'Built with QRCode.js library': 'Dibuat dengan library',
+    'Toggle Theme': 'Ganti Tema',
+    'Change Language': 'Ganti Bahasa',
+    'GitHub': 'GitHub'
+  },
+  en: {
+    'QR Code Generator': 'QR Code Generator',
+    'Create QR Code from URL or text easily': 'Create QR Code from URL or text easily',
+    'URL or Text': 'URL or Text',
+    'Enter URL or text': 'Enter URL or text',
+    'QR Code Size': 'QR Code Size',
+    'Color': 'Color',
+    'Generate QR Code': 'Generate QR Code',
+    'Download QR Code': 'Download QR Code',
+    'How to use:': 'How to use:',
+    'Enter URL or text in the input field': 'Enter URL or text in the input field',
+    'Adjust size and color as desired (optional)': 'Adjust size and color as desired (optional)',
+    'Click Generate QR Code button': 'Click "Generate QR Code" button',
+    'QR Code will appear on screen': 'QR Code will appear on screen',
+    'Click Download QR Code to save image': 'Click "Download QR Code" to save image',
+    'Scan QR Code with Google Lens or other QR scanner apps': 'Scan QR Code with Google Lens or other QR scanner apps',
+    'Built with QRCode.js library': 'Built with',
+    'Toggle Theme': 'Toggle Theme',
+    'Change Language': 'Change Language',
+    'GitHub': 'GitHub'
+  }
+};

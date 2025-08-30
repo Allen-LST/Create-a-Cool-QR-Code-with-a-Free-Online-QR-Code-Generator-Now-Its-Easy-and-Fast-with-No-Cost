@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QR Code Generator - Create a Cool QR Code with a Free Online QR Code Generator Now It's Easy and Fast with No
+    Cost</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <link rel="stylesheet" href="css/palette.css">
+  <link rel="stylesheet" href="css/mainDesign.css">
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body data-theme="github-light">
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a href="#" class="navbar-brand" target="_blank">
+      <i class="fas fa-qrcode"></i>
+      <span data-text="QR Code Generator">QR Code Generator</span>
+    </a>
+    <div class="navbar-controls">
+      <select class="language-select" id="language-select">
+        <option value="id">🇮🇩 Indonesia</option>
+        <option value="en">🇺🇸 English</option>
+      </select>
+      
+      <button class="theme-toggle" id="theme-toggle" title="Toggle Theme">
+        <i class="fas fa-sun" id="theme-icon"></i>
+      </button>
+      
+      <div class="navbar-menu">
+        <button class="menu-button" onclick="toggleDropdown()">
+          <i class="fas fa-ellipsis-v"></i>
+        </button>
+        <div class="dropdown-content" id="dropdownMenu">
+          <button class="dropdown-item" onclick="toggleThemeFromMenu()">
+            <i class="fas fa-palette"></i>
+            <span id="theme-menu-text" data-text="Toggle Theme">Toggle Theme</span>
+          </button>
+          <button class="dropdown-item" onclick="toggleLanguageFromMenu()">
+            <i class="fas fa-globe"></i>
+            <span id="lang-menu-text" data-text="Change Language">Change Language</span>
+          </button>
+          <div class="dropdown-divider"></div>
+          <a href="https://github.com/allen-lst" class="dropdown-item" target="_blank">
+            <i class="fab fa-github"></i>
+            <span data-text="GitHub">GitHub</span>
+          </a>
+          <a href="https://www.tiktok.com/@allen_k.js" class="dropdown-item" target="_blank">
+            <i class="fab fa-tiktok"></i>
+            TikTok
+          </a>
+          <a href="https://linktr.ee/alenlst" class="dropdown-item" target="_blank">
+            <i class="fas fa-bars"></i>
+            LinkTree
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="https://shinwolf-subject.github.io/DetectY-Lie/main-dtct/QR-ScaNneR/prev" class="dropdown-item" target="_blank">
+            <i class="fas fa-qrcode"></i>
+            QR Scanner
+          </a>
+          <a href="https://shinwolf-subject.github.io/TaskFlow-TaskManager-Responsive-User-Interaction/mainapp" class="dropdown-item" target="_blank">
+            <ion-icon class="taskflow" name="checkmark-done-circle-outline"></ion-icon>
+            TaskFlow
+          </a>
+          <a href="https://shinwolf-subject.github.io/DetectY-Lie/main-dtct/palette-generator" class="dropdown-item" target="_blank">
+            <i class="fas fa-palette"></i>
+            Color Palette Generator
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="javascript:void(0)" class="dropdown-item" onclick="window.location.reload()">
+            <i class="fas fa-sync-alt"></i>
+            Refresh Page
+          </a>
+          <a href="javascript:void(0)" class="dropdown-item" onclick="window.print()">
+            <i class="fas fa-print"></i>
+            Print Page
+          </a>
+          <a href="javascript:void(0)" class="dropdown-item" onclick="sharePage(event)">
+            <i class="fas fa-share-nodes"></i>
+            Share Page
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- Main Content -->
+  <main class="main">
+    <div class="card">
+      <div class="header">
+        <h1 data-text="QR Code Generator">QR Code Generator</h1>
+        <p data-text="Create QR Code from URL or text easily">Buat QR Code dari URL atau teks dengan mudah</p>
+      </div>
+      
+      <form class="form" id="qrForm">
+        <div class="form-group">
+          <label class="form-label" for="qr-input" data-text="URL or Text">URL atau Teks</label>
+          <input type="url" id="qr-input" class="form-input" placeholder="Masukkan URL atau teks" autocomplete="off" data-placeholder="Enter URL or text">
+        </div>
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="qr-size" data-text="QR Code Size">Ukuran QR Code</label>
+            <select id="qr-size" class="form-select">
+              <option value="128">128x128</option>
+              <option value="200">200x200</option>
+              <option value="256" selected>256x256</option>
+              <option value="300">300x300</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="qr-color" data-text="Color">Warna</label>
+            <input type="color" id="qr-color" class="color-input" value="#000000">
+          </div>
+        </div>
+        
+        <button type="button" class="btn btn-primary" id="generate-btn" style="width: 100%;" data-text="Generate QR Code">
+          Generate QR Code
+        </button>
+      </form>
+      
+      <div class="qr-result" id="qrResult">
+        <div class="qr-code-wrapper">
+          <div id="qrcode"></div>
+        </div>
+        <button class="btn btn-secondary" id="download-btn" data-text="Download QR Code">Download QR Code</button>
+      </div>
+      
+      <div class="instructions">
+        <h3 data-text="How to use:">Cara menggunakan:</h3>
+        <ol id="instruction-list">
+          <li data-text="Enter URL or text in the input field">Masukkan URL atau teks di kolom input</li>
+          <li data-text="Adjust size and color as desired (optional)">Atur ukuran dan warna sesuai keinginan (opsional)
+          </li>
+          <li data-text="Click Generate QR Code button">Klik tombol "Generate QR Code"</li>
+          <li data-text="QR Code will appear on screen">QR Code akan muncul di layar</li>
+          <li data-text="Click Download QR Code to save image">Klik "Download QR Code" untuk menyimpan gambar</li>
+          <li data-text="Scan QR Code with Google Lens or other QR scanner apps">Scan QR Code dengan Google Lens atau
+            aplikasi scanner QR lainnya</li>
+        </ol>
+      </div>
+    </div>
+    
+    <div class="footer">
+      <p>&COPY; <a href="#">QR Generator</a> | <span>Make With Library</span> <a href="https://cdnjs.com/libraries/qrcodejs" target="_blank">QRCode.js</a><span>,
+          Icons</span> <a href="https://fontawesome.com/search" target="_blank">Font Awesome</a> <span>And</span> <a href="https://ionic.io/ionicons">Ionic
+          Icons</a>.</p>
+    </div>
+  </main>
+  
+  <script src="js/languageAndThemeState.js"></script>
+  <script src="js/mainApp.js"></script>
+  <script src="js/translations.js"></script>
+  <script src="js/shareOption.js"></script>
+</body>
+ </html>
